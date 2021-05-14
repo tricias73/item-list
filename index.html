@@ -166,8 +166,9 @@
                             <table class="table traits">
                                 <tr>
                                     <th scope="col" class="sort" data-sort="abr">Name</th>
-                                    <th scope="col" class="sort" data-sort="price">Price</th>
-                                    <th scope="col" class="sort" data-sort="category">Category</th>
+                                    <th scope="col" class="sort" data-sort="price">Description</th>
+                                    <th scope="col" class="sort" data-sort="category">Add Cost</th>
+				<th scope="col" class="sort" data-sort="category">Remove Cost</th>
                                 </tr>
                                 <tbody class="list">
                                 </tbody>
@@ -278,7 +279,7 @@
 	 let traitList = null;
         $.getJSON(traitListURL, function(data) {
             var options = {
-                valueNames: ['defName', 'addPrice', 'removePrice', 'description', 'conflicts'],
+                valueNames: ['defName', 'description', 'addPrice', 'removePrice'],
                 item: '<tr><td class="abr" scope="row"></td><td class="price"></td><td class="karmatype"></td></tr>'
             };
 
