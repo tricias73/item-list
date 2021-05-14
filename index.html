@@ -243,6 +243,23 @@
 
             eventList = new List('events', options, eventData);
         });
+	    
+	 let traitList = null;
+        $.getJSON(traitListURL, function(data) {
+            var options = {
+                valueNames: ['abr', 'price', 'category'],
+                item: '<tr><td class="abr" scope="row"></td><td class="price"></td><td class="category"></td></tr>'
+            };
+
+            var traitData = [];
+            $.each(data.traits, function(index, value) {
+                if (value["price"] > 0) {
+                    traitData.push(value);
+                }
+            });
+
+            traitList = new List('traits', options, traitData);
+        });    
 
         $("#item-price-min").keyup(function() {
             updateItemFilter();
