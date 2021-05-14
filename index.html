@@ -69,6 +69,9 @@
                                     <button class="btn btn-success" ng-class="{'active': (selected == '2')}" ng-click='selected=2'>
                                         Events
                                     </button>
+					<button class="btn btn-success" ng-class="{'active': (selected == '3')}" ng-click='selected=3'>
+                                        Traits
+                                    </button>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label" for="">Price Between:</label>
@@ -248,7 +251,7 @@
         $.getJSON(traitListURL, function(data) {
             var options = {
                 valueNames: ['abr', 'price', 'category'],
-                item: '<tr><td class="abr" scope="row"></td><td class="price"></td><td class="category"></td></tr>'
+                item: '<tr><td class="abr" scope="row"></td><td class="price"></td><td class="karmatype"></td></tr>'
             };
 
             var traitData = [];
