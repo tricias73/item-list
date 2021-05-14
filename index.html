@@ -292,6 +292,16 @@
                 }
                 return allow;
             });
+		traitList.filter(function(item) {
+                var allow = true;
+                if (minPrice != "" && parseInt(item.values().price) < minPrice) {
+                    allow = false;
+                }
+                if (maxPrice != "" && parseInt(item.values().price) > maxPrice) {
+                    allow = false;
+                }
+                return allow;
+            });
         }
     </script>
     <script type="text/javascript">
