@@ -280,7 +280,12 @@
         $.getJSON(traitListURL, function(data) {
             var options = {
                 valueNames: ['defName', 'description', 'addPrice', 'removePrice'],
-                item: '<tr><td class="abr" scope="row"></td><td class="price"></td><td class="karmatype"></td></tr>'
+                item: '<tr>
+		    <td class="abr" scope="row"></td>
+		    <td class="description"></td>
+		    <td class="addPrice"></td>
+		    <td class="removePrice"></td>
+	    		</tr>'
             };
 
             var traitData = [];
