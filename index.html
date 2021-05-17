@@ -43,7 +43,7 @@
                 <h1 class="display-3">TwitchToolkit</h1>
                 <p>TwitchToolkit is a mod written by Twitch.tv/hodlhodl that integrates storytelling decisions into chat
                     votes, awards viewers coins for watching, and those coins can be spent on items/events in game.</p>
-                <ul class="list-group">
+                <!-- <ul class="list-group">
                     <li class="list-group-item">!bal - check balance and karma rate</li>
                     <li class="list-group-item">!purchase - Syntax: !purchase beer 6 - purchase an item or event</li>
                     <li class="list-group-item">!whatiskarma - explains what the karma system is</li>
@@ -57,7 +57,7 @@
                     <li class="list-group-item">!joinqueue - join the viewer name queue</li>
                     <li class="list-group-item">!mypawnstory - view information about your pawns backstory</li>
                     <li class="list-group-item">!mypawnskills - view information about your pawns skills</li>
-                </ul>
+                </ul> -->
             </div>
         </div>
         <div ng-app='tabs' ng-controller='tabCtrl'>
@@ -67,6 +67,10 @@
                         <div class='tabs'>
                             <form>
                                 <div class="form-group">
+                                    <button class="btn btn-success" ng-class="{'active': (selected == '0')}"
+                                        ng-click='selected=0'>
+                                        Commands
+                                    </button>
                                     <button class="btn btn-success" ng-class="{'active': (selected == '1')}"
                                         ng-click='selected=1'>
                                         Items
@@ -80,7 +84,7 @@
                                         Traits
                                     </button>
                                 </div>
-                                <div class="form-group row">
+                                <div class="form-group row" ng-show='selected == 1 || selected == 2'>
                                     <label class="col-sm-2 col-form-label" for="">Price Between:</label>
                                     <div class="col-sm-2">
                                         <input type="number" class="form-control" id="item-price-min" placeholder="0">
@@ -93,6 +97,26 @@
                             </form>
                         </div>
                     </div>
+                </div>
+                <div class="row" ng-show='selected == 0'>
+                    <ul class="list-group">
+                        <li class="list-group-item">!bal - check balance and karma rate</li>
+                        <li class="list-group-item">!purchase - Syntax: !purchase beer 6 - purchase an item or event
+                        </li>
+                        <li class="list-group-item">!whatiskarma - explains what the karma system is</li>
+                        <li class="list-group-item">!purchaselist - gives users a link to the public purchase list</li>
+                        <li class="list-group-item">!instructions - gives users info on using the mod</li>
+                        <li class="list-group-item">!modinfo - gives users info about the mod</li>
+                        <li class="list-group-item">!modsettings - gives user info on how many coins are being earned
+                            and
+                            global settings</li>
+                        <li class="list-group-item">!giftcoins - Syntax: !giftcoins @username 100 - give another viewer
+                            your
+                            coins</li>
+                        <li class="list-group-item">!joinqueue - join the viewer name queue</li>
+                        <li class="list-group-item">!mypawnstory - view information about your pawns backstory</li>
+                        <li class="list-group-item">!mypawnskills - view information about your pawns skills</li>
+                    </ul>
                 </div>
                 <div class="row" ng-show='selected == 1'>
                     <div class="col-md-12">
@@ -167,14 +191,6 @@
                                 <input type="text" class="form-control search" aria-label="Search"
                                     aria-describedby="inputGroup-sizing-sm">
                             </div>
-                            <p>
-                                <button type="button" class="btn btn-primary sort" data-sort="abr">
-                                    Sort
-                                </button>
-                                <button type="button" class="btn btn-primary sort" data-sort="price">
-                                    Sort by Price
-                                </button>
-                            </p>
                             <table class="table traits">
                                 <tr>
                                     <th scope="col" class="sort" data-sort="abr">Name</th>
@@ -256,6 +272,21 @@
             position: relative;
             top: -4px;
             right: -5px;
+        }
+
+        .btn-success {
+            background-color: blue;
+            border-color: blue;
+        }
+
+        .btn-success.active {
+            background-color: yellow !important;
+            border-color: yellow !important;
+        }
+
+        .btn-success:hover {
+            background-color: red;
+            border-color: red;
         }
     </style>
     <script type="text/javascript">
@@ -356,7 +387,7 @@
     <script type="text/javascript">
         var tabs = angular.module('tabs', [])
             .controller('tabCtrl', function ($scope) {
-                $scope.selected = "1";
+                $scope.selected = "0";
             });
     </script>
 </body>
