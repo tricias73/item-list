@@ -6,7 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
@@ -14,14 +15,15 @@
     <script type="text/javascript">
         const itemListURL = "https://raw.githubusercontent.com/tricias73/siddie-item-list/master/StoreItems.json";
         const eventListURL = "https://raw.githubusercontent.com/tricias73/siddie-item-list/master/StoreEvents.json";
-	const traitListURL = "https://raw.githubusercontent.com/tricias73/siddie-item-list/master/StoreTraits.json";
+        const traitListURL = "https://raw.githubusercontent.com/tricias73/siddie-item-list/master/StoreTraits.json";
     </script>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <a class="navbar-brand" href="#">Siddie</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
@@ -39,7 +41,8 @@
         <div class="jumbotron">
             <div class="container">
                 <h1 class="display-3">TwitchToolkit</h1>
-                <p>TwitchToolkit is a mod written by Twitch.tv/hodlhodl that integrates storytelling decisions into chat votes, awards viewers coins for watching, and those coins can be spent on items/events in game.</p>
+                <p>TwitchToolkit is a mod written by Twitch.tv/hodlhodl that integrates storytelling decisions into chat
+                    votes, awards viewers coins for watching, and those coins can be spent on items/events in game.</p>
                 <ul class="list-group">
                     <li class="list-group-item">!bal - check balance and karma rate</li>
                     <li class="list-group-item">!purchase - Syntax: !purchase beer 6 - purchase an item or event</li>
@@ -47,8 +50,10 @@
                     <li class="list-group-item">!purchaselist - gives users a link to the public purchase list</li>
                     <li class="list-group-item">!instructions - gives users info on using the mod</li>
                     <li class="list-group-item">!modinfo - gives users info about the mod</li>
-                    <li class="list-group-item">!modsettings - gives user info on how many coins are being earned and global settings</li>
-                    <li class="list-group-item">!giftcoins - Syntax: !giftcoins @username 100 - give another viewer your coins</li>
+                    <li class="list-group-item">!modsettings - gives user info on how many coins are being earned and
+                        global settings</li>
+                    <li class="list-group-item">!giftcoins - Syntax: !giftcoins @username 100 - give another viewer your
+                        coins</li>
                     <li class="list-group-item">!joinqueue - join the viewer name queue</li>
                     <li class="list-group-item">!mypawnstory - view information about your pawns backstory</li>
                     <li class="list-group-item">!mypawnskills - view information about your pawns skills</li>
@@ -62,13 +67,16 @@
                         <div class='tabs'>
                             <form>
                                 <div class="form-group">
-                                    <button class="btn btn-success" ng-class="{'active': (selected == '1')}" ng-click='selected=1'>
+                                    <button class="btn btn-success" ng-class="{'active': (selected == '1')}"
+                                        ng-click='selected=1'>
                                         Items
                                     </button>
-                                    <button class="btn btn-success" ng-class="{'active': (selected == '2')}" ng-click='selected=2'>
+                                    <button class="btn btn-success" ng-class="{'active': (selected == '2')}"
+                                        ng-click='selected=2'>
                                         Events
                                     </button>
-					<button class="btn btn-success" ng-class="{'active': (selected == '3')}" ng-click='selected=3'>
+                                    <button class="btn btn-success" ng-class="{'active': (selected == '3')}"
+                                        ng-click='selected=3'>
                                         Traits
                                     </button>
                                 </div>
@@ -78,7 +86,8 @@
                                         <input type="number" class="form-control" id="item-price-min" placeholder="0">
                                     </div>
                                     <div class="col-sm-2">
-                                        <input type="number" class="form-control" id="item-price-max" placeholder="100000">
+                                        <input type="number" class="form-control" id="item-price-max"
+                                            placeholder="100000">
                                     </div>
                                 </div>
                             </form>
@@ -92,7 +101,8 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="inputGroup-sizing-sm">Search</span>
                                 </div>
-                                <input type="text" class="form-control search" aria-label="Search" aria-describedby="inputGroup-sizing-sm">
+                                <input type="text" class="form-control search" aria-label="Search"
+                                    aria-describedby="inputGroup-sizing-sm">
                             </div>
                             <p>
                                 <button type="button" class="btn btn-primary sort" data-sort="abr">
@@ -121,7 +131,8 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="inputGroup-sizing-sm">Search</span>
                                 </div>
-                                <input type="text" class="form-control search" aria-label="Search" aria-describedby="inputGroup-sizing-sm">
+                                <input type="text" class="form-control search" aria-label="Search"
+                                    aria-describedby="inputGroup-sizing-sm">
                             </div>
                             <p>
                                 <button type="button" class="btn btn-primary sort" data-sort="abr">
@@ -146,14 +157,15 @@
                         </div>
                     </div>
                 </div>
-		    <div class="row" ng-show='selected == 3'>
+                <div class="row" ng-show='selected == 3'>
                     <div class="col-md-12">
                         <div id="traits">
                             <div class="input-group input-group-sm mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="inputGroup-sizing-sm">Search</span>
                                 </div>
-                                <input type="text" class="form-control search" aria-label="Search" aria-describedby="inputGroup-sizing-sm">
+                                <input type="text" class="form-control search" aria-label="Search"
+                                    aria-describedby="inputGroup-sizing-sm">
                             </div>
                             <p>
                                 <button type="button" class="btn btn-primary sort" data-sort="abr">
@@ -168,7 +180,7 @@
                                     <th scope="col" class="sort" data-sort="abr">Name</th>
                                     <th scope="col" class="sort" data-sort="description">Description</th>
                                     <th scope="col" class="sort" data-sort="addCost">Add Cost</th>
-				    <th scope="col" class="sort" data-sort="removeCost">Remove Cost</th>
+                                    <th scope="col" class="sort" data-sort="removeCost">Remove Cost</th>
                                 </tr>
                                 <tbody class="list">
                                 </tbody>
@@ -195,13 +207,18 @@
                 <a href="#">Back to top</a>
             </p>
             <p>Album example is © Bootstrap, but please download and customize it for yourself!</p>
-            <p>New to Bootstrap? <a href="../../">Visit the homepage</a> or read our <a href="../../getting-started/">getting started guide</a>.</p>
+            <p>New to Bootstrap? <a href="../../">Visit the homepage</a> or read our <a
+                    href="../../getting-started/">getting started guide</a>.</p>
         </div>
     </footer>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
     <script src="https://embed.twitch.tv/embed/v1.js"></script>
     <style>
         .sort:after {
@@ -216,7 +233,7 @@
             top: -10px;
             right: -5px;
         }
-        
+
         .sort.asc:after {
             width: 0;
             height: 0;
@@ -228,7 +245,7 @@
             top: 4px;
             right: -5px;
         }
-        
+
         .sort.desc:after {
             width: 0;
             height: 0;
@@ -243,14 +260,14 @@
     </style>
     <script type="text/javascript">
         let itemList = null;
-        $.getJSON(itemListURL, function(data) {
+        $.getJSON(itemListURL, function (data) {
             var options = {
                 valueNames: ['abr', 'price', 'category'],
                 item: '<tr><td class="abr" scope="row"></td><td class="price"></td><td class="category"></td></tr>'
             };
 
             var itemData = [];
-            $.each(data.items, function(index, value) {
+            $.each(data.items, function (index, value) {
                 if (value["price"] > 0) {
                     itemData.push(value);
                 }
@@ -260,14 +277,14 @@
         });
 
         let eventList = null;
-        $.getJSON(eventListURL, function(data) {
+        $.getJSON(eventListURL, function (data) {
             var options = {
                 valueNames: ['abr', 'price', 'karmatype'],
                 item: '<tr><td class="abr" scope="row"></td><td class="price"></td><td class="karmatype"></td></tr>'
             };
 
             var eventData = [];
-            $.each(data.incitems, function(index, value) {
+            $.each(data.incitems, function (index, value) {
                 if (value["price"] > 0) {
                     eventData.push(value);
                 }
@@ -275,36 +292,36 @@
 
             eventList = new List('events', options, eventData);
         });
-	    
-	 let traitList = null;
-        $.getJSON(traitListURL, function(data) {
+
+        let traitList = null;
+        $.getJSON(traitListURL, function (data) {
             var options = {
                 valueNames: ['defName', 'description', 'addPrice', 'removePrice'],
                 item: '<tr><td class="defName" scope="row"></td><td class="description"></td><td class="addPrice"></td><td class="removePrice"></td></tr>'
             };
 
             var traitData = [];
-            $.each(data.traits, function(index, value) {
-                if (value["price"] > 0) {
-                    traitData.push(value);
-                }
+            $.each(data.traits, function (index, value) {
+                // if (value["price"] > 0) {
+                traitData.push(value);
+                // }
             });
 
             traitList = new List('traits', options, traitData);
-        });    
+        });
 
-        $("#item-price-min").keyup(function() {
+        $("#item-price-min").keyup(function () {
             updateItemFilter();
         });
 
-        $("#item-price-max").keyup(function() {
+        $("#item-price-max").keyup(function () {
             updateItemFilter();
         });
 
         function updateItemFilter() {
             var minPrice = $("#item-price-min").val();
             var maxPrice = $("#item-price-max").val();
-            itemList.filter(function(item) {
+            itemList.filter(function (item) {
                 var allow = true;
                 if (minPrice != "" && parseInt(item.values().price) < minPrice) {
                     allow = false;
@@ -314,7 +331,7 @@
                 }
                 return allow;
             });
-	    eventList.filter(function(item) {
+            eventList.filter(function (item) {
                 var allow = true;
                 if (minPrice != "" && parseInt(item.values().price) < minPrice) {
                     allow = false;
@@ -324,7 +341,7 @@
                 }
                 return allow;
             });
-		traitList.filter(function(item) {
+            traitList.filter(function (item) {
                 var allow = true;
                 if (minPrice != "" && parseInt(item.values().price) < minPrice) {
                     allow = false;
@@ -338,7 +355,7 @@
     </script>
     <script type="text/javascript">
         var tabs = angular.module('tabs', [])
-            .controller('tabCtrl', function($scope) {
+            .controller('tabCtrl', function ($scope) {
                 $scope.selected = "1";
             });
     </script>
